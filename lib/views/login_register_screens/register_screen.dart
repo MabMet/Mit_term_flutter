@@ -16,6 +16,7 @@ class _RegisterPageState extends State<RegisterPage> {
   late final TextEditingController fullNameController;
   late final GlobalKey<FormState> globalKey;
 
+
   @override
   void initState() {
     emailController = TextEditingController();
