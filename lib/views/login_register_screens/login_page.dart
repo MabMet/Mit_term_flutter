@@ -83,13 +83,27 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomTextFieldWidget(
               controller: emailController,
               hintText: 'Enter your email met@gmail',
-              labelText: 'Email',
+              labelText: 'Email', validator:
+                (value) { if (value != null && value.isEmpty) {
+                  return 'Please enter some text';
+                }else if(value != null && value.length <= 8){
+                  return 'Please enter more then 8 characters';
+                }else{
+                  return null;
+                } },
             ),
             CustomTextFieldWidget(
               controller: passController,
               hintText: 'Enter your password 123',
               labelText: 'Password',
               textPass: true,
+              validator: (value) { if (value != null && value.isEmpty) {
+                return 'Please enter some text';
+              }else if(value != null && value.length <= 8){
+                return 'Please enter more then 8 characters';
+              }else{
+                return null;
+              } },
             ),
             const SizedBox(
               height: 40,

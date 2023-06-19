@@ -8,6 +8,7 @@ class CustomTextFieldWidget extends StatefulWidget {
     this.textPass = false,
     this.controller,
     this.onSubmit,
+    required this.validator,
   });
 
   final String? hintText;
@@ -15,6 +16,7 @@ class CustomTextFieldWidget extends StatefulWidget {
   final bool textPass;
   final TextEditingController? controller;
   final ValueChanged<String>? onSubmit;
+  final FormFieldValidator validator;
 
   @override
   State<CustomTextFieldWidget> createState() => _CustomTextFieldWidgetState();
@@ -28,7 +30,7 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
     super.initState();
     _hidePassword = widget.textPass;
   }
-
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,6 +39,7 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
         vertical: 15,
       ),
       child: Form(
+        key: formKey,
         child: TextFormField(
           controller: widget.controller,
           obscureText: _hidePassword,
