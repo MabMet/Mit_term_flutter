@@ -3,8 +3,6 @@ import 'package:mid_term_flutter_app/views/login_register_screens/login_page.dar
 import 'package:mid_term_flutter_app/views/login_register_screens/register_screen.dart';
 import 'package:mid_term_flutter_app/views/splash_screen/splash_Signup.dart';
 import 'package:mid_term_flutter_app/views/splash_screen/splash_page.dart';
-
-import '../views/home_screens/home_page.dart';
 import '../views/home_screens/main_page.dart';
 
 Route<dynamic>? appRoute(RouteSettings settings){

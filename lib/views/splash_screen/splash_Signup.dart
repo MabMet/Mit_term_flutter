@@ -15,9 +15,20 @@ class SplashSignUpPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                radius: 80,
-                backgroundImage: AssetImage('images/hotel.jpg'),
+              Container(
+                height: 200,
+                width: 200,
+                decoration: const BoxDecoration(
+                  borderRadius:
+                  BorderRadius.only(topRight: Radius.circular(100),topLeft: Radius.circular(100),)),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(topRight:Radius.circular(100),topLeft: Radius.circular(100),),
+                  child: SizedBox.fromSize(
+                    size: const Size.fromRadius(20),
+                    // Image radius
+                    child: Image.asset('images/hotel.jpg',fit: BoxFit.cover,),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -26,22 +37,28 @@ class SplashSignUpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Let\'s get ',
                     style: TextStyle(
                       fontSize: 23,
                     ),
                   ),
                   Container(
-                    height: 30,
-                    width: 30,
+                    height: 20,
+                    width: 40,
                     decoration: BoxDecoration(
-                      color: grayColor.withOpacity(0.4),
-                      borderRadius: BorderRadius.circular(3),
+                      borderRadius:
+                      BorderRadius.circular(8),),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: SizedBox.fromSize(
+                        size: const Size.fromRadius(48),
+                        // Image radius
+                        child: Image.asset('images/hotel.jpg',fit: BoxFit.cover,),
+                      ),
                     ),
-                    child: Image.asset('images/hotel.jpg'),
                   ),
-                  Text(
+                  const Text(
                     ' started',
                     style: TextStyle(
                       fontSize: 23,
